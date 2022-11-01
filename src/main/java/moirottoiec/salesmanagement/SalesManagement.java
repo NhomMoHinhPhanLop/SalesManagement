@@ -26,10 +26,10 @@ public class SalesManagement {
     public static void main(String[] args) {
             testDAL tDAL = new testDAL();
             //Add
-            Category newCategory = new Category();
-            newCategory.setName("test");
-            newCategory.setDescription("des test");
-            tDAL.addCategory(newCategory);
+//            Category newCategory = new Category();
+//            newCategory.setName("test");
+//            newCategory.setDescription("des test");
+//            tDAL.addCategory(newCategory);
             //getList
            List results = tDAL.getListCategory();
             for (Iterator iterator = results.iterator(); iterator.hasNext();) {
