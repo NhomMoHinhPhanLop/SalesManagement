@@ -10,7 +10,7 @@ import javax.persistence.Query;
 import moirottoiec.salesmanagement.DAL.testDAL;
 import moirottoiec.salesmanagement.Entity.Category;
 import moirottoiec.salesmanagement.Entity.Customer;
-import moirottoiec.salesmanagement.Entity.Vegetable;
+import moirottoiec.salesmanagement.Entity.Category;
 import moirottoiec.salesmanagement.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -24,12 +24,21 @@ import org.hibernate.cfg.Configuration;
 public class SalesManagement {
 
     public static void main(String[] args) {
-            List results = new testDAL().getListVegetable();
+            testDAL tDAL = new testDAL();
+            //Add
+            Category newCategory = new Category();
+            newCategory.setName("test");
+            newCategory.setDescription("des test");
+            tDAL.addCategory(newCategory);
+            //getList
+           List results = tDAL.getListCategory();
             for (Iterator iterator = results.iterator(); iterator.hasNext();) {
-                Vegetable vegetable= (Vegetable) iterator.next();
-                System.out.println("NameV: " + vegetable.getVegetableName());
+                Category category= (Category) iterator.next();
+                System.out.println("NameV: " + category.getName());
                 
-            }
+            } 
+            //close Session
+            tDAL.close();
 //        }
     }
 }

@@ -5,7 +5,7 @@
 package moirottoiec.salesmanagement.DAL;
 
 import java.util.List;
-import moirottoiec.salesmanagement.Entity.Vegetable;
+import moirottoiec.salesmanagement.Entity.Category;
 
 /**
  *
@@ -16,18 +16,32 @@ public class testDAL extends ManagerDAL{
     public testDAL() {
         super();
     }
-    public List getListVegetable(){
+    public void addCategory(Category category){
+        try {
+            beginTransaction();
+            getSession().save(category);
+            getTransaction().commit();
+            getSession().flush();
+        } 
+        catch (Exception e) {
+            if(getTransaction()!=null && getTransaction().isActive()){
+                getTransaction().rollback();
+            }
+        } 
+    }
+    public List getListCategory(){
         List results=null;
         try {
             beginTransaction();
-            String hql = " FROM Vegetable V";
-            results = getSession().createQuery(hql,Vegetable.class).list();
+            String hql = " FROM Category V";
+            results = getSession().createQuery(hql,Category.class).list();
             getTransaction().commit();
         } catch (Exception e) {
-            getTransaction().rollback();
-        } finally {
-            close();
-        }
+           if(getTransaction()!=null && getTransaction().isActive()){
+                getTransaction().rollback();
+            }
+        } 
         return results;
     }
+    
 }
