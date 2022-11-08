@@ -63,7 +63,19 @@ public class Customer {
     public void setCustomerID(int customerID) {
         this.customerID = customerID;
     }
+    /**
+     * @return the fullName
+     */
+    public String getFullName() {
+        return fullName;
+    }
 
+    /**
+     * @param fullName the fullName to set
+     */
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
     /**
      * @return the phone
      */
@@ -78,19 +90,7 @@ public class Customer {
         this.phone = phone;
     }
 
-    /**
-     * @return the fullName
-     */
-    public String getFullName() {
-        return fullName;
-    }
 
-    /**
-     * @param fullName the fullName to set
-     */
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
 
     /**
      * @return the address

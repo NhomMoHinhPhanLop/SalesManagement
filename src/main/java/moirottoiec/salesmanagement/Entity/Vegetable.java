@@ -46,11 +46,11 @@ public class Vegetable {
     private String vegetableName;
     @Column
     private String unit;
-    @Column 
+    @Column (nullable = false)
     private int amount;
     @Column
     private String image;
-    @Column
+    @Column (nullable = false)
     private float price;
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "vegetable")
     private Set<OrderDetail> orderDetails = new HashSet<>();
