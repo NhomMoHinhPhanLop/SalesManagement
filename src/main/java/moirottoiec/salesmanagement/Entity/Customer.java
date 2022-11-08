@@ -30,9 +30,9 @@ public class Customer {
     @Cascade(value = org.hibernate.annotations.CascadeType.ALL)
     private int customerID;
     @Column
-    private int phone;
-    @Column
     private String fullName;
+    @Column
+    private int phone;
     @Column
     private String address;
     @Column 
@@ -42,7 +42,7 @@ public class Customer {
         
     }
 
-    public Customer(int customerID, int phone, String fullName, String address, String city) {
+    public Customer(int customerID, String fullName, int phone, String address, String city) {
         this.customerID = customerID;
         this.phone = phone;
         this.fullName = fullName;
@@ -63,7 +63,19 @@ public class Customer {
     public void setCustomerID(int customerID) {
         this.customerID = customerID;
     }
+    /**
+     * @return the fullName
+     */
+    public String getFullName() {
+        return fullName;
+    }
 
+    /**
+     * @param fullName the fullName to set
+     */
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
     /**
      * @return the phone
      */
@@ -78,19 +90,7 @@ public class Customer {
         this.phone = phone;
     }
 
-    /**
-     * @return the fullName
-     */
-    public String getFullName() {
-        return fullName;
-    }
 
-    /**
-     * @param fullName the fullName to set
-     */
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
 
     /**
      * @return the address

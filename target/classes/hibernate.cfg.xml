@@ -24,7 +24,12 @@
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
         <!-- Entity mapping -->
-         <!--<mapping class="demopl.DAL.Course" />--> 
+<!--         <mapping class="moirottoiec.salesmanagement.Entity.Vegetable" /> 
+         <mapping class="moirottoiec.salesmanagement.Entity.Customer" /> 
+         <mapping class="moirottoiec.salesmanagement.Entity.Category" /> 
+         <mapping class="moirottoiec.salesmanagement.Entity.Order" /> 
+         <mapping class="moirottoiec.salesmanagement.Entity.OrderdDetail" /> -->
+         
     <mapping resource = "Customer.hbm.xml"/>
     <mapping resource = "Category.hbm.xml"/>
     <mapping resource = "Vegetable.hbm.xml"/>

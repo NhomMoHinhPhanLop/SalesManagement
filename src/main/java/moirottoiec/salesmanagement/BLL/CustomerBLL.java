@@ -30,14 +30,17 @@ public class CustomerBLL {
     }
     
     public void addCustomer(Customer customer){
+        customerDAL = new CustomerDAL();
         customerDAL.addCustomer(customer);
     }
     
     public void updateCustomer(Customer customer){
+        customerDAL = new CustomerDAL();
         customerDAL.updateCustomer(customer);
     }
     
     public void deleteCustomer(Customer customer){
+        customerDAL = new CustomerDAL();
         customerDAL.deleteCustomer(customer);
     }
 }

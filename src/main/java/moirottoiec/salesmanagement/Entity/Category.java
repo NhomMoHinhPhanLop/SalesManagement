@@ -4,6 +4,7 @@
  */
 package moirottoiec.salesmanagement.Entity;
 
+import com.sun.istack.NotNull;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -39,7 +40,7 @@ public class Category{
     private int categoryID;
     @Column
     private String name;
-    @Column
+    @Column(nullable = false)
     private String description;
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "category",cascade = CascadeType.ALL)
     private Set<Vegetable> vegetables = new HashSet<>();
