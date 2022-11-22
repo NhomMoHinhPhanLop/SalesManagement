@@ -40,7 +40,7 @@ public class Vegetable {
     @JoinColumn(name = "CategoryID",
             nullable = false,
             foreignKey = @ForeignKey(name = "CategoryID")
-    )
+    )  
     private Category category;
     @Column
     private String vegetableName;

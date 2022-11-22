@@ -16,7 +16,7 @@ import moirottoiec.salesmanagement.Entity.Customer;
  *
  * @author anhph
  */
-public class CustomerGUI extends javax.swing.JPanel {
+public class CustomerGUI_1 extends javax.swing.JPanel {
     
     /**
      * Creates new form CustomerGUI
@@ -26,7 +26,7 @@ public class CustomerGUI extends javax.swing.JPanel {
     private Customer customer;
     String keyword = "";
     DefaultTableModel dtm;
-    public CustomerGUI() {
+    public CustomerGUI_1() {
         initComponents();
         customer = new Customer();
         customerBLL = new CustomerBLL();
@@ -57,7 +57,7 @@ public class CustomerGUI extends javax.swing.JPanel {
             dtm.addRow(row);
                 
         } 
-        
+       
         AddButton.setEnabled(true);
     }
     
@@ -359,10 +359,10 @@ public class CustomerGUI extends javax.swing.JPanel {
         Customer cus = new Customer();
         int row = CustomerTable.getSelectedRow();
         if (row == -1){
-            JOptionPane.showMessageDialog(CustomerGUI.this, "Vui long chon giang vien can xoa!", "Loi", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(CustomerGUI_1.this, "Vui long chon giang vien can xoa!", "Loi", JOptionPane.ERROR_MESSAGE);
         }
         else{
-            int confirm = JOptionPane.showConfirmDialog(CustomerGUI.this, "Ban chac chan muon xoa chu?");
+            int confirm = JOptionPane.showConfirmDialog(CustomerGUI_1.this, "Ban chac chan muon xoa chu?");
             if(confirm == JOptionPane.YES_OPTION){
 
                 cus.setCustomerID((int) CustomerTable.getValueAt(row, 1));
@@ -387,7 +387,7 @@ public class CustomerGUI extends javax.swing.JPanel {
         Customer cus = new Customer();
         int row = CustomerTable.getSelectedRow();
         if (row == -1){
-            JOptionPane.showMessageDialog(CustomerGUI.this, "Vui long chon giang vien can sua!",  "Loi", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(CustomerGUI_1.this, "Vui long chon giang vien can sua!",  "Loi", JOptionPane.ERROR_MESSAGE);
         }
         else{
             int customerID = (int) CustomerTable.getValueAt(row, 1);

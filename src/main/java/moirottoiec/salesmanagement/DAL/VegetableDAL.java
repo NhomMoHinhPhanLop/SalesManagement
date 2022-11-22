@@ -1,31 +1,32 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package moirottoiec.salesmanagement.DAL;
 
+import moirottoiec.salesmanagement.Entity.Vegetable;
+import org.hibernate.Session;
 import java.util.List;
 import java.util.Vector;
 import moirottoiec.salesmanagement.Entity.Category;
 import moirottoiec.salesmanagement.Entity.Customer;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
-
 /**
  *
- * @author anhph
+ * @author Duy
  */
-public class CustomerDAL extends ManagerDAL{
-    public CustomerDAL(){
+public class VegetableDAL extends ManagerDAL {
+    public VegetableDAL(){
         super();
     }
     
-    public List getListCustomer(){
+   public List getListVegetable(){
         List results=null;
         try {
             beginTransaction();
-            String hql = " FROM Customer c";
-            results = getSession().createQuery(hql,Customer.class).list();
+            String hql = " FROM Vegetable v";
+            results = getSession().createQuery(hql,Vegetable.class).list();
             getTransaction().commit();
         } catch (Exception e) {
            if(getTransaction()!=null && getTransaction().isActive()){
@@ -34,40 +35,38 @@ public class CustomerDAL extends ManagerDAL{
         } 
         return results;
     }
-    
-    public List search(String keyword){
-        List results = null;
-        try{
+   public List getListCategory(){
+        List results=null;
+        try {
             beginTransaction();
-            String hql = "FROM Customer c WHERE FullName like '%"+keyword+"%'";
-            results = getSession().createQuery(hql, Customer.class).list();
+            String hql = " FROM Category c";
+            results = getSession().createQuery(hql,Category.class).list();
             getTransaction().commit();
-        }catch (Exception e) {
+        } catch (Exception e) {
            if(getTransaction()!=null && getTransaction().isActive()){
                 getTransaction().rollback();
             }
         } 
         return results;
     }
-    
-    public void addCustomer(Customer customer){
-        try {
+    public void addVegetable(Vegetable v){
+        try{
             beginTransaction();
-            getSession().save(customer);
+            getSession().save(v);
             getTransaction().commit();
             getSession().flush();
-        } 
-        catch (Exception e) {
+        }
+        catch(Exception e){
             if(getTransaction()!=null && getTransaction().isActive()){
                 getTransaction().rollback();
             }
         }
+        
     }
-    
-    public void updateCustomer(Customer customer){
+    public void updateVegetable(Vegetable vegetable){
         try{
             beginTransaction();
-            getSession().update(customer);
+            getSession().update(vegetable);
             getTransaction().commit();
             getSession().flush();
         }catch(Exception e){
@@ -76,11 +75,10 @@ public class CustomerDAL extends ManagerDAL{
             }
         }
     }
-    
-    public void deleteCustomer(Customer customer){
+    public void deleteVegetable(Vegetable v){
         try {
             beginTransaction();
-            getSession().delete(customer);
+            getSession().delete(v);
             getTransaction().commit();
             getSession().flush();
         } 
@@ -90,4 +88,8 @@ public class CustomerDAL extends ManagerDAL{
             }
         }
     }
+    
+    
+
+    
 }

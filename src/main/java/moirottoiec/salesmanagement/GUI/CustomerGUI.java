@@ -410,7 +410,7 @@ public class CustomerGUI extends javax.swing.JPanel {
     private void CustomerTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CustomerTableMouseClicked
         // TODO add your handling code here:
                 Customer cus = new Customer();
-        int row = CustomerTable.getSelectedRow();
+                int row = CustomerTable.getSelectedRow();
 //                            cus.setCustomerID((int) CustomerTable.getValueAt(row, 1));
 //                cus.setFullName((String) CustomerTable.getValueAt(row, 2));
 //                cus.setPhone((int) CustomerTable.getValueAt(row, 3));
