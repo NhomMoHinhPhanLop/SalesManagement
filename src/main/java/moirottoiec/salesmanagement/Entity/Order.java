@@ -52,7 +52,7 @@ public class Order{
     @Column
     private String note;
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "order")
-    private Set<OrderDetail> orderDetails = new HashSet<>();
+    private Set<OrderDetail> orderDetails = new HashSet<OrderDetail>();
     public Order(){
         
     }

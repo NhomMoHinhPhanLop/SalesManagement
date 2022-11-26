@@ -46,11 +46,10 @@ public class StatisticsDAL extends ManagerDAL{
         try {
             beginTransaction();
 
-            String hql = "SELECT OrderDetail.* FROM OrderDetail, `Order`"
-                    +" WHERE `OrderDetail`.orderID = `Order`.orderID"
-                    + " AND YEAR(`Order`.date)=:year";
-            SQLQuery query = getSession().createSQLQuery(hql);
-            query.addEntity(OrderDetail.class);
+            String hql = "FROM Order o"
+                    +" WHERE YEAR(date)=:year"
+                    + " ORDER BY date";
+            Query query = getSession().createQuery(hql,Order.class);
             query.setParameter("year", year);
             results = query.getResultList();
             getTransaction().commit();
@@ -59,6 +58,27 @@ public class StatisticsDAL extends ManagerDAL{
                 getTransaction().rollback();
             }
         } 
-        return results;        
+        return results;     
+    }
+    public List ListSellingProducts(int month,int year){
+        List results=null;
+        try {
+            beginTransaction();
+
+            String hql = "SELECT detail.* FROM Orderdetail detail , `Order` o"
+                    +" WHERE YEAR(date)=:year AND MONTH(date)=:month "
+                    + "ORDER BY vegetableID,quantity DESC";
+            SQLQuery query = getSession().createSQLQuery(hql);
+            query.addEntity(OrderDetail.class);
+            query.setParameter("year", year);
+            query.setParameter("month", month);
+            results = query.getResultList();
+            getTransaction().commit();
+        } catch (Exception e) {
+           if(getTransaction()!=null && getTransaction().isActive()){
+                getTransaction().rollback();
+            }
+        } 
+        return results; 
     }
 }

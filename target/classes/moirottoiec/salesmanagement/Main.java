@@ -4,30 +4,13 @@
  */
 
 package moirottoiec.salesmanagement;
-import java.util.Calendar;
-import java.util.Iterator;
-import java.util.List;
-import javax.persistence.Query;
-import moirottoiec.salesmanagement.BLL.StatisticsBLL;
-import moirottoiec.salesmanagement.DAL.StatisticsDAL;
-import moirottoiec.salesmanagement.DAL.testDAL;
-import moirottoiec.salesmanagement.Entity.Category;
-import moirottoiec.salesmanagement.Entity.Customer;
-import moirottoiec.salesmanagement.Entity.Category;
-import moirottoiec.salesmanagement.Entity.Order;
-import moirottoiec.salesmanagement.Entity.OrderDetail;
 import moirottoiec.salesmanagement.GUI.MainGUI;
-import moirottoiec.salesmanagement.util.HibernateUtil;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
+
 /**
  *
  * @author Admin
  */
-public class SalesManagement {
+public class Main {
 
     public static void main(String[] args) {
         new MainGUI().setVisible(true);

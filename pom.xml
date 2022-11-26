@@ -28,13 +28,20 @@
 		<artifactId>lombok</artifactId>
 		<version>1.18.24</version>
 		<scope>provided</scope>
-	</dependency>        
+	</dependency>   
+        <!-- https://mvnrepository.com/artifact/jfree/jfreechart -->
+        <dependency>
+            <groupId>jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+
     </dependencies>    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <exec.mainClass>moirottoiec.salesmanagement.SalesManagement</exec.mainClass>
+        <exec.mainClass>moirottoiec.salesmanagement.Main</exec.mainClass>
     </properties>
     
     <build>

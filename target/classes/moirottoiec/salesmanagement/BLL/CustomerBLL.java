@@ -8,7 +8,6 @@ package moirottoiec.salesmanagement.BLL;
 import java.util.Iterator;
 import java.util.List;
 import moirottoiec.salesmanagement.DAL.CustomerDAL;
-import moirottoiec.salesmanagement.DAL.testDAL;
 import moirottoiec.salesmanagement.Entity.Category;
 import moirottoiec.salesmanagement.Entity.Customer;
 
