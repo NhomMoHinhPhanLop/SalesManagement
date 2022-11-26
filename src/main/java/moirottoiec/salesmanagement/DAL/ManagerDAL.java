@@ -13,7 +13,7 @@ import org.hibernate.Transaction;
  * @author Admin
  */
 public class ManagerDAL {
-    private Session session;
+    private Session session=null;
 
     public ManagerDAL() {
         session=HibernateUtil.getSessionFactory().openSession();

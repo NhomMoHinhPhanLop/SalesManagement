@@ -14,20 +14,5 @@ public class Main {
 
     public static void main(String[] args) {
         new MainGUI().setVisible(true);
-//            testDAL tDAL = new testDAL();
-//            StatisticsBLL statisticsBLL=new StatisticsBLL();
-            //Add
-//            Category newCategory = new Category();
-//            newCategory.setName("test");
-//            newCategory.setDescription("des test");
-//            tDAL.addCategory(newCategory);
-            //getList
-//           List results = statisticsBLL.getRevenueByMouth(11,2022);
-//            for (Iterator iterator = results.iterator(); iterator.hasNext();) {
-//                Order category= (Order) iterator.next();
-//                System.out.println("NameV: " + category.getOrderID());
-//                
-//            } 
-//        }
     }
 }
